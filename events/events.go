@@ -24,11 +24,11 @@ func (OrderRequested) MessageType() string {
 
 // OrderAccepted is the Kafka event emitted when an order is accepted.
 type OrderAccepted struct {
-	EventID      string `json:"eventId"`
-	EventVersion int    `json:"eventVersion"`
-	OccurredAt   int64  `json:"occurredAt"`
-	OrderID      string `json:"orderId"`
-	DriverID     string `json:"driverId"`
+	EventID      string `json:"eventId" avro:"eventId"`
+	EventVersion int    `json:"eventVersion" avro:"eventVersion"`
+	OccurredAt   int64  `json:"occurredAt" avro:"occurredAt"`
+	OrderID      string `json:"orderId" avro:"orderId"`
+	DriverID     string `json:"driverId" avro:"driverId"`
 }
 
 // MessageType returns the order accepted event type for Kafka (no error).
